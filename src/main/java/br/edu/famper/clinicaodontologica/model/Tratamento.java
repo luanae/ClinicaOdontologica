@@ -1,6 +1,7 @@
 package br.edu.famper.clinicaodontologica.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.Date;
@@ -11,19 +12,22 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of = "idTratamento")
+@EqualsAndHashCode(of = "id")
 public class Tratamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idTratamento;
+    private Long id;
 
     @Column(name = "descricao", length = 100)
+    @NotNull(message = "Preencha o campo Descrição!")
     private String descricao;
 
     @Column(name = "dataInicio")
+    @NotNull(message = "Preencha o campo Data de inicio!")
     private Date dataInicio;
 
     @Column(name = "dataFim")
+    @NotNull(message = "Preencha o campo Data final!")
     private Date dataFim;
 }

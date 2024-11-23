@@ -1,6 +1,7 @@
 package br.edu.famper.clinicaodontologica.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jdk.jfr.Description;
 import lombok.*;
 
 import java.util.Date;
@@ -13,6 +14,11 @@ import java.util.List;
 @Builder
 
 public class PagamentoDto {
+
+    @Schema(description = "Id do pagamento",
+            example = "1",
+            title = "id")
+    private Long id;
 
     @Schema(description = "Valor da consulta",
             example = "200.00",
@@ -30,9 +36,4 @@ public class PagamentoDto {
             maxLength = 20)
     private String formaPagamento;
 
-    @Schema(description = "Consulta",
-            example = "12",
-            title = "consulta",
-            maxLength = 150)
-    private List<ConsultaDto> consulta;
 }

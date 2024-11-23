@@ -17,6 +17,11 @@ import java.util.List;
 
 public class ConsultaDto {
 
+    @Schema(description =  "Id da consulta",
+            example = "1",
+            title = "id")
+    private Long id;
+
     @Schema(description = "Descricao da consulta",
             example = "Dor de dente",
             title = "descricao",
@@ -37,11 +42,16 @@ public class ConsultaDto {
             example = "Coloridinho da Silva",
             title = "Nome do dentista",
             maxLength = 150)
-    private List<DentistaDto> dentista;
+    private DentistaDto dentista;
 
     @Schema(description = "Nome do paciente",
             example = "Lucas neto",
             title = "Nome do paciente",
             maxLength = 150)
-    private List<PacienteDto> paciente;
+    private PacienteDto paciente;
+
+    @Schema(description = "Pagamento",
+            example = "200.00",
+            title = "pagamento")
+    private PagamentoDto pagamento;
 }

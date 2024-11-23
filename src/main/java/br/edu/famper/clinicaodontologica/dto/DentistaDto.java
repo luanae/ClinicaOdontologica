@@ -11,6 +11,11 @@ import lombok.*;
 
 public class DentistaDto {
 
+    @Schema(description = "Id do dentista",
+            example = "1",
+            title = "id")
+    private Long id;
+
     @Schema(description = "Nome do dentista",
             example = "Coloridinho da Silva",
             title = "nome",
@@ -40,4 +45,10 @@ public class DentistaDto {
             title = "endereco",
             maxLength = 150)
     private String endereco;
+
+    @Schema(description = "Descrição da consulta",
+            example = "Dente podre",
+            title = "descricao consulta",
+            maxLength = 100)
+    private ConsultaDto consulta;
 }

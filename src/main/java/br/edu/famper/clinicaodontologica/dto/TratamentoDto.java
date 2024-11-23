@@ -14,6 +14,11 @@ import java.util.Date;
 
 public class TratamentoDto {
 
+    @Schema(description = "Id do tratamento",
+            example = "1",
+            title = "id")
+    private Long id;
+
     @Schema(description = "Descricao do tratamento",
             example = "sarna",
             title = "descricao",

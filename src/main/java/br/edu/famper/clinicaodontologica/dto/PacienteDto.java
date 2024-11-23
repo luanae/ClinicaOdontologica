@@ -10,6 +10,11 @@ import lombok.*;
 @Builder
 public class PacienteDto {
 
+    @Schema(description = "Id do paciente",
+            example = "1",
+            title = "id")
+    private Long id;
+
     @Schema(description = "Nome do paciente",
             example = "Lucas Neto",
             title = "nome",
@@ -39,4 +44,10 @@ public class PacienteDto {
             title = "e-mail",
             maxLength = 150)
     private String email;
+
+    @Schema(description = "Descrição da consulta",
+            example = "Dente podre",
+            title = "descricao consulta",
+            maxLength = 100)
+    private ConsultaDto consulta;
 }
